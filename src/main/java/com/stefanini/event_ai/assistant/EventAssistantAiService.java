@@ -25,7 +25,7 @@ public interface EventAssistantAiService {
             
             Exemplo:
             Crie um evento com os dados abaixo e retorne o JSON:
-            - Tipo do Evento: Esportivo
+            - Tipo do Evento: Pago ou Gratuito
             - Faixa Etária: Jovens de 18 - 24 anos
             - Sobre o evento: Evento sobre a importancia da corrida na vida das pessoas
             - Capacidade: 1.000 pessoas
@@ -36,16 +36,20 @@ public interface EventAssistantAiService {
               "event_name": string,
               "description": string (mínimo 150 palavras),
               "categories": string,
-              "ticket": {
-                "vip": number,
-                "normal": number,
-                "premium": number
-              }
+              "tickets": [
+                      {
+                        "type": "TIPO_DO_INGRESSO",
+                        "price": 0.0,
+                        "quantity": 0,
+                        "halfPrice": true
+                      }
             }
            
             Extrema importância:
             - Não invente categorias ou regras além de Esportes,Festival,Gastronomia,Música,Teatro,Tecnologia e Workshops, caso seja solicitado algo que não
             entre em nenhuma das categorias, retorne dizendo "Esse tema não se encaixa em nenhuma categoria do sistema".
+            - Faixa etárias: Livre para todas as idades, Acima de 10 anos, Acima de 12 anos, Acima de 14 anos, Acima de 16 anos ou Somente adultos
+            - Tipo de ingressos: GRATIS, PAGO, CAMAROTE, MEIA.
             - Se faltar algum dado, peça somente o que precisa.
             - Se a pergunta for sobre assuntos fora de eventos e ingressos, diga "Não tenho capacidade de responder essa pergunta"
             """)
