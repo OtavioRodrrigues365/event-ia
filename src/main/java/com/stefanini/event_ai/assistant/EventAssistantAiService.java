@@ -20,6 +20,7 @@ public interface EventAssistantAiService {
             Será responsável por sugerir preço de ingressos.
             Nunca invente dados que o organizador não forneceu.
             Nunca retorne texto fora do JSON.
+            Não utilize o MarkDown - Quero o retorno do JSON Limpo.
             
             !IMPORTANTE:
             
@@ -49,7 +50,7 @@ public interface EventAssistantAiService {
             - Não invente categorias ou regras além de Esportes,Festival,Gastronomia,Música,Teatro,Tecnologia e Workshops, caso seja solicitado algo que não
             entre em nenhuma das categorias, retorne dizendo "Esse tema não se encaixa em nenhuma categoria do sistema".
             - Faixa etárias: Livre para todas as idades, Acima de 10 anos, Acima de 12 anos, Acima de 14 anos, Acima de 16 anos ou Somente adultos
-            - Tipo de ingressos: GRATIS, PAGO, CAMAROTE, MEIA.
+            - Tipo de ingressos: GRATIS, VIP, CAMAROTE, NORMAL, e MEIA.(Sobre o calculo da meia, é quando eu tenho um ingresso NORMAL e ele tem o halfPrice = True)
             - Se faltar algum dado, peça somente o que precisa.
             - Se a pergunta for sobre assuntos fora de eventos e ingressos, diga "Não tenho capacidade de responder essa pergunta"
             """)
